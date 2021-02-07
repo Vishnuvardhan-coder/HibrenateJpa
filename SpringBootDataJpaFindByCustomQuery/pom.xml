@@ -16,7 +16,11 @@
 	<description>SpringBootDataJpaFindByCustomQuery</description>
 	<properties>
 		<java.version>1.8</java.version>
+		 <start-class>com.trinetra.SpringBootDataJpaFindByCustomQueryApplication.java</start-class>
 	</properties>
+
+   
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -3,6 +3,7 @@ package com.trinetra.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import com.trinetra.entity.Customer;
 
@@ -22,5 +23,11 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
 	//select * from customer_dtls where customer_age in (:age1,:age2)
 	public List<Customer> findByCustomerAgeIn(List<Integer> age);
+	
+	//Here comes @Query which uses Hql internally
+	
+	@Query("select customerName from Customer")
+	public List<String> findAllCustomerNames();
+	
 	
 }

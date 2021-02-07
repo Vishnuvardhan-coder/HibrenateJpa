@@ -14,6 +14,7 @@ import com.trinetra.repository.CustomerRepository;
 public class SpringBootDataJpaFindByCustomQueryApplication {
 
 	public static void main(String[] args) {
+		
 		ConfigurableApplicationContext context = SpringApplication.run(SpringBootDataJpaFindByCustomQueryApplication.class, args);
 	
 		CustomerRepository customerRepository = context.getBean(CustomerRepository.class);
@@ -57,12 +58,19 @@ public class SpringBootDataJpaFindByCustomQueryApplication {
 		 * customers.forEach(c ->{ System.out.println(c); });
 		 */
 		
-		List<Customer> customers = customerRepository.findByCustomerAgeIn(Arrays.asList(27,39));
+		/*// findByAgeIn
+		 * List<Customer> customers =
+		 * customerRepository.findByCustomerAgeIn(Arrays.asList(27,39));
+		 * 
+		 * customers.forEach(c ->{ System.out.println(c); });
+		 */
 		
-		customers.forEach(c ->{
+		
+		List<String> customers = customerRepository.findAllCustomerNames();
+		
+		customers.forEach(c->{
 			System.out.println(c);
 		});
-		
 		
 		context.close();
 		
